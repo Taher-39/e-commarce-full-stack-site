@@ -77,7 +77,7 @@ const Admin = () => {
                 
                 <input className="form-control mb-2 w-50" name="pdImg" type="file" onChange={handleImageUpload} />
                 
-                <input className="btn btn-warning" type="submit" />
+                <input className="btn btn-success" type="submit" />
             </form>
         </div>
     );

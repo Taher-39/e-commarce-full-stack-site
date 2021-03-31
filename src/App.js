@@ -12,6 +12,7 @@ import Admin from "./components/Admin/Admin";
 import Orders from "./components/Orders/Orders";
 import NotFound from "./components/NotFound/NotFound";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import ProductInfo from "./components/ProductInfo/ProductInfo";
 
 export const UserContext = createContext()
 
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <PrivateRoute path="/admin">
             <Admin />
+          </PrivateRoute>
+          <PrivateRoute path="/product/:_id">
+            <ProductInfo></ProductInfo>
           </PrivateRoute>
           <Route path="/orders">
             <Orders />
