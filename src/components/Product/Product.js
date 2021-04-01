@@ -12,7 +12,7 @@ const Products = (props) => {
             <div className='border border-2 rounded m-3'>
                 <img style={{ height: '300px', width: '300px'}} src={imageURL} alt="" />
                 <div className="description text-center p-3">
-                    <h5>{name} {weight}kg {price}TK</h5>
+                    <h5>{name} {weight} {price}TK</h5>
                     <button className="btn btn-warning" onClick={() => handleBuyProduct(_id)} >Buy Now</button>
                 </div>
             </div>

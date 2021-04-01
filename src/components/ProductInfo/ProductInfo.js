@@ -8,7 +8,7 @@ const ProductInfo = () => {
     const [productDetails, setProductDetails] = useState({})
     const { name, price, imageURL } = productDetails;
     useEffect(() => {
-        fetch('http://localhost:5000/product/'+ _id)
+        fetch('https://pumpkin-tart-86699.herokuapp.com/product/'+ _id)
         .then(res => res.json())
         .then(data => {
             setProductDetails(data)
@@ -17,7 +17,7 @@ const ProductInfo = () => {
 
     // const handleCheckout = () => {
     //     const newCheckout = { ...loggedInUser, ...productDetails};
-    //         fetch('http://localhost:5000/checkout', {
+    //         fetch('https://pumpkin-tart-86699.herokuapp.com/checkout', {
     //             method: 'POST',
     //             headers: { 'Content-Type': 'application/json' },
     //             body: JSON.stringify(newCheckout)

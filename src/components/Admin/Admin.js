@@ -36,7 +36,7 @@ const Admin = () => {
             price: data.pdPrice,
             imageURL: imageURL
         };
-        const url = `http://localhost:5000/addProduct`;
+        const url = `https://pumpkin-tart-86699.herokuapp.com/addProduct`;
 
         fetch(url, {
             method: 'POST',
