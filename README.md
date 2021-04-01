@@ -1,10 +1,9 @@
-###<h2>Hi, I'm Taher🙌</h2> <br>
-##I am web-devloper; <br>
-##Learn with Programming Hero Team
+<h2>Hi, I'm Taher🙌</h2> <br>
+<h4>##I am web-devloper</h4><br>
 
 🎁[Live Site Link](https://hatbazar-2012c.web.app/)
 
-###This Project information<br>
+<h3>###This Project information</h3><br>
 **✔ This is Full Stack web application about e-commerce Site<br>
 **✔ I use node.js in this project for Back End and Mongodb for database.<br>
 **✔ I use react router & firebase authentication base project <br>
