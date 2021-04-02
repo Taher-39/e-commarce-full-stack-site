@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ManageProduct from '../ManageProduct/ManageProduct';
 import Product from '../Product/Product';
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
             {
                 products.map(pd => <Product pd={pd} key={pd._id}></Product>)
             }
+            
         </div>
     );
 };

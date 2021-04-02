@@ -15,20 +15,20 @@ const ProductInfo = () => {
         })
     },[_id])
 
-    // const handleCheckout = () => {
-    //     const newCheckout = { ...loggedInUser, ...productDetails};
-    //         fetch('https://pumpkin-tart-86699.herokuapp.com/checkout', {
-    //             method: 'POST',
-    //             headers: { 'Content-Type': 'application/json' },
-    //             body: JSON.stringify(newCheckout)
-    //         })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //         })
-    // }
     const handleCheckout = () => {
-        alert('clicked')
+        const newCheckout = { ...loggedInUser, productName: name, productPrice: price, time: new Date()};
+        const url = `https://pumpkin-tart-86699.herokuapp.com/productCheckout`;
+        fetch(url, {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(newCheckout)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data){
+                    alert('CheckOut Successfully')
+                }
+            })
     }
     return (
         <div className="container pt-5">
