@@ -32,15 +32,21 @@ const Login = () => {
             });
     }
     return (
-        <div className='container signInArea mt-5'>
-            {
-                loggedInUser.email ?
-                    <button onClick={() => setLoggedInUser({})} className="form-control btn btn-info" >Sign Out</button>
-                    : <div>
-                        <button onClick={handleGoogleSignIn} className="rounded-pill form-control btn-outline-danger">Login With Google</button>
-                    </div>
-            }
+        <div className='login-area'>
+            <div className='container signInArea pt-5'>
+                {
+                    loggedInUser.email ?
+                        <div>
+                            <button onClick={() => setLoggedInUser({})} className="form-control btn btn-info w-50 mb-3" >Sign Out</button>
+                            <img src='https://cdn.dribbble.com/users/2444366/screenshots/5745666/salla_dribbl.gif' className="pr-3 w-75" alt="" />
+                        </div>
+                        : <div>
+                            <button onClick={handleGoogleSignIn} className="form-control btn btn-info w-50 mb-3">Login With Google</button>
+                            <img src='https://cdn.dribbble.com/users/2444366/screenshots/5745666/salla_dribbl.gif' className="pr-3 w-75" alt="" />
+                        </div>
+                }
 
+            </div>
         </div>
     );
 };

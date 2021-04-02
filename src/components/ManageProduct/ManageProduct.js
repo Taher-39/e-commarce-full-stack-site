@@ -15,12 +15,12 @@ const ManageProduct = (props) => {
     }
     return (
         <div>
-            <div className="border border-3 rounded p-3">
+            <div className="border border-3 rounded p-2 bg-light">
                 <div className="body row d-flex justify-content-around">
                     <p>{name}</p>
                     <p>{weight}</p>
                     <p>৳{price}</p>
-                    <button className='btn btn-danger' onClick={handlePdDelete}>Delete</button>
+                    <button className='btn btn-danger' onClick={handlePdDelete}>✖</button>
                 </div>
             </div>
         </div>

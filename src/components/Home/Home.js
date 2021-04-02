@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ManageProduct from '../ManageProduct/ManageProduct';
 import Product from '../Product/Product';
-
+import './Home.css';
 const Home = () => {
 
     const [products, setProducts] = useState([]);
@@ -12,7 +11,7 @@ const Home = () => {
             .then(data => setProducts(data))
     }, [])
     return (
-        <div className="row">
+        <div className="home row">
             {
                 products.length === 0 &&
                     <div className="my-0 mx-auto mt-5">

@@ -26,7 +26,7 @@ const ProductInfo = () => {
             .then(res => res.json())
             .then(data => {
                 if(data){
-                    alert('CheckOut Successfully')
+                    alert('CheckOut Successfully...Check Order Page')
                 }
             })
     }

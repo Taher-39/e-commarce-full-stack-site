@@ -7,7 +7,7 @@ const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div>
-            <ReactBootStrap.Navbar collapseOnSelect expand="md" bg="success" variant="dark">
+            <ReactBootStrap.Navbar collapseOnSelect expand="md" bg="info" variant="dark">
                 <ReactBootStrap.Navbar.Brand href="#home">Hat-Bazer</ReactBootStrap.Navbar.Brand>
                 <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">

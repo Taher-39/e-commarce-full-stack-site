@@ -1,0 +1,11 @@
+.aside{
+    width: 20%;
+    min-height: 100vh;
+    background-color: cadetblue;
+    display: inline-block;
+}
+.view{
+    width: 80%;
+    min-height: 100vh;
+    background-color: lightblue;
+}

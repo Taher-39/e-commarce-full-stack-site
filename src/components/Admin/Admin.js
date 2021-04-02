@@ -2,13 +2,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import ManageProduct from '../ManageProduct/ManageProduct';
-
+import './Admin.css';
 const Admin = () => {
     //manage product
     const { register, handleSubmit } = useForm();
     const [imageURL, setImageURL] = useState(null);
     const [products, setProducts] = useState([]);
-    const [addProduct, setAddProduct] = useState(false)
+    const [addProduct, setAddProduct] = useState(true)
     const [manageProduct, setManageProduct] = useState(false)
 
     useEffect(() => {
@@ -18,7 +18,14 @@ const Admin = () => {
     }, [])
     
     
-   
+    const handleManageProduct = () => {
+        setManageProduct(true)
+        setAddProduct(false)
+    }
+    const handleAddProduct = () => {
+        setManageProduct(false)
+        setAddProduct(true)
+    }
 
     const onSubmit = data => {
         const productInfo = {
@@ -36,7 +43,9 @@ const Admin = () => {
             },
             body: JSON.stringify(productInfo)
         })
-            .then(res => console.log('loaded'))
+            .then(res => {
+                alert('Product Added Successfully..')
+            })
     };
 
     const handleImageUpload = event => {
@@ -57,12 +66,12 @@ const Admin = () => {
     }
     
     return (
-        <div className="container">
+        <div className='row'>
             <div className='aside'>
-                <button className='btn btn-success' onClick={() => setManageProduct(!manageProduct)}>Manage Product</button>
-                <button className='btn btn-success' onClick={() => setAddProduct(!addProduct)}>addProduct</button>
+                <div className='ml-5 my-3'><button className='btn btn-warning' onClick={handleManageProduct}>Manage Product</button></div>
+                <div className='ml-5 my-3'><button className='btn btn-warning' onClick={handleAddProduct}>addProduct</button></div>
             </div>
-            <div className='view'>
+            <div className='view p-5'>
                 {
                     addProduct &&
                     <div className='add-product'>
@@ -71,17 +80,16 @@ const Admin = () => {
 
                             <input className="form-control mb-2 w-50" name="pdName" placeholder='Enter Name' ref={register} />
 
-                            <input className="form-control mb-2 w-50" name="pdWeight" type="number" placeholder='Enter Weight' ref={register} />
+                            <input className="form-control mb-2 w-50" name="pdWeight" type="text" placeholder='Enter Weight' ref={register} />
 
                             <input className="form-control mb-2 w-50" name="pdPrice" type="number" placeholder='Enter Price' ref={register} />
 
                             <input className="form-control mb-2 w-50" name="pdImg" type="file" onChange={handleImageUpload} />
 
-                            <input className="btn btn-success" type="submit" />
+                            <input className="btn btn-info" type="submit" />
                         </form>
                     </div>
                 }
-                <br/><hr/>
                 {
                     manageProduct &&
                     <div className='manage-product'>
