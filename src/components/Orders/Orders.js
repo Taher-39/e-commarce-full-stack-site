@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
-import './Orders.css'
+import './Orders.css';
+
 const Orders = () => {
     const [orders, setOrders] = useState([])
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -18,7 +19,7 @@ const Orders = () => {
                     <h4>Your Email: {loggedInUser.email}</h4>
                 </div>
                 {
-                    orders.length === 0 && loggedInUser.email &&
+                    orders.length == 0 && loggedInUser.email &&
                     <div className="d-flex justify-content-center mt-5">
                         <div className="spinner-border" role="status">
                             <span className="sr-only">Loading...</span>
@@ -26,19 +27,19 @@ const Orders = () => {
                     </div>
                 }
                 {
-                    orders.map(order => <div className='border border-2 rounded p-2 row d-flex justify-content-around mt-2 mb-2 bg-light'>
+                    orders.map(order => <div className='border border-2 rounded p-2 row d-flex justify-content-around mt-2 mb-2 bg-light' key={order._key}>
                         <p>{order.productName}</p>
                         <p><b>Price:</b> {order.productPrice}</p>
-                        <p><b>Date:</b> {(new Date(order.time)).toDateString('dd/MM/yyyy')}</p>
+                        <p><b>Date:</b> {order.time}</p>
                         <button className='btn btn-danger'>✖</button>
                     </div>)
                 }
                 {
-                    orders.length &&
+                    orders.length ?
                     <div className='d-flex flex-row-reverse'>
-                        <button className='btn btn-info p-2'>Process To Payment</button>
+                        <button className='btn btn-info p-2'>Process To Payment</button> 
                     </div>
-
+                    : null
                 }
             </div>
         </div>

@@ -15,8 +15,8 @@ const Home = () => {
             {
                 products.length === 0 &&
                     <div className="my-0 mx-auto mt-5">
-                        <div className="spinner-border" role="status">
-                            <span className="sr-only">Loading...</span>
+                        <div className="spinner-border text-danger" role="status">
+                            <span className="visually-hidden"></span>
                         </div>
                     </div>
             }

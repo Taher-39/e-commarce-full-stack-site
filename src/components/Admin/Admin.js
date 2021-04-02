@@ -80,7 +80,7 @@ const Admin = () => {
 
                             <input className="form-control mb-2 w-50" name="pdName" placeholder='Enter Name' ref={register} />
 
-                            <input className="form-control mb-2 w-50" name="pdWeight" type="text" placeholder='Enter Weight' ref={register} />
+                            <input className="form-control mb-2 w-50" name="pdWeight" type="number" placeholder='Enter Weight' ref={register} />
 
                             <input className="form-control mb-2 w-50" name="pdPrice" type="number" placeholder='Enter Price' ref={register} />
 

@@ -8,18 +8,18 @@ const Products = (props) => {
         history.push(`/product/${_id}`)
     }
     return (
-        <div className="col-md-4 col-sm-12 col-xl-3 d-flex justify-content-center my-4  card-item">
-            <div className='border border-2 rounded'>
-                <img style={{ height: '300px', width: '270px'}} src={imageURL} alt="" />
-                <div className="description text-center p-3 bg-secondary text-white">
-                    <h5>{name} {weight} </h5>
-                    <div className="row d-flex justify-content-around">
-                        <h4><b>৳</b> {price}</h4>
-                        <button className="btn btn-info" onClick={() => handleBuyProduct(_id)} >Buy Now</button>
+            <div className="col-md-4 col-sm-12 col-xl-3 d-flex justify-content-center my-4  card-item">
+                <div className='border border-2 rounded'>
+                    <img style={{ height: '300px', width: '270px'}} src={imageURL} alt="" />
+                    <div className="description text-center p-3 bg-secondary text-white">
+                        <h5>{name} {weight} </h5>
+                        <div className="row d-flex justify-content-around">
+                            <h4><b>৳</b> {price}</h4>
+                            <button className="btn btn-info" onClick={() => handleBuyProduct(_id)} >Buy Now</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

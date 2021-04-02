@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { UserContext } from '../../App';
+import './ProductInfo.css'
 
 const ProductInfo = () => {
     const {_id} = useParams()
@@ -31,23 +32,25 @@ const ProductInfo = () => {
             })
     }
     return (
-        <div className="container pt-5">
-            <h3>Checkout</h3>
-            <div className="pd-info border border-3 rounded p-3">
-                <div><img src={imageURL} width="100px" alt="" /></div>
-                <div className="header row d-flex justify-content-around">
-                    <p>Description</p>
-                    <p>Quantity</p>
-                    <p>Price</p>
+        <div className='product-info'>
+            <div className="container pt-5">
+                <h3>Checkout</h3>
+                <div className="border border-3 rounded p-3 bg-light">
+                    <div><img src={imageURL} width="100px" alt="" /></div>
+                    <div className="header row d-flex justify-content-around">
+                        <p>Description</p>
+                        <p>Quantity</p>
+                        <p>Price</p>
+                    </div>
+                    <div className="body row d-flex justify-content-around">
+                        <p>{name}</p>
+                        <p>1</p>
+                        <p>৳ {price}</p>
+                    </div>
                 </div>
-                <div className="body row d-flex justify-content-around">
-                    <p>{name}</p>
-                    <p>1</p>
-                    <p>৳ {price}</p>
+                <div className="d-flex flex-row-reverse">
+                    <button className="btn btn-info mt-2" onClick={handleCheckout}>CheckOut</button>
                 </div>
-            </div>
-            <div className="d-flex flex-row-reverse">
-                <button className="btn btn-success mt-2" onClick={handleCheckout}>CheckOut</button>
             </div>
         </div>
     );
